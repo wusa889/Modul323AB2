@@ -31,5 +31,3 @@ const grouping = (groups, number) => {
 const groupedReviews = reviews.reduce(grouping, {})
 
 const averageReview = reviews.reduce( (n, g) => n + g) / reviews.length
-
-console.log(groupedReviews)

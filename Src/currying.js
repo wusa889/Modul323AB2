@@ -1,8 +1,8 @@
-//a 90
-//b 80
-//c 70
-//d 60
-//f <60
+// a 90
+// b 80
+// c 70
+// d 60
+// f <60
 
 const R = require("./ramda.min.js")
 
@@ -35,4 +35,24 @@ function makeSentence(student) {
 const newArray = studentGrades.map(p => makeSentence(p))
 console.log(newArray)
 
+const stringArray = ["Insel", "Altersheim", "Wohnung"];
+
+const hubschrauber = R.curry((hub, landeplatz, ort) => {
+    return `${hub} ${ort} ${landeplatz}`
+})
+
+const hubschraubeexec = hubschrauber("Hubschrauber")("Landeplatz");
+console.log(stringArray.map(hubschraubeexec))
+
+
+// impure
+function impureArrayLength(){
+    console.log(stringArray.length)
+}
+
+// pure
+function pureArrayLength(array){
+   const length = array.length
+   return length
+}
 
